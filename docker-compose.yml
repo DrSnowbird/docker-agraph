@@ -1,0 +1,14 @@
+agrah:
+  image: franzinc/agraph:v6.0
+  container_name: agraph
+  ports:
+    - "10000-10035:10000-10035"
+  mem_limit: 1000000000
+  volumes_from: 
+    - agraph-data
+
+agraph-data:
+  image: franzinc/agraph-data
+  container_name: agraph-data
+  volumes: 
+    - .:/data
