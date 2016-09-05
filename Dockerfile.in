@@ -1,6 +1,6 @@
 
 FROM centos:centos6
-MAINTAINER Franz Support <support@franz.com>
+MAINTAINER DrSnowbird
 
 RUN yum -y update; yum clean all
 # glibc-common and coreutils are likely redundant, but they're
