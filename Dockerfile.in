@@ -19,6 +19,8 @@ RUN wget -q http://franz.com/ftp/pri/acl/ag/ag__VERSION__/linuxamd64.64/__TGZ__ 
     && yum -y remove wget tar \
     && yum clean all
 
+RUN "echo never > /sys/kernel/mm/transparent_hugepage/enabled"
+
 COPY agraph.cfg /app/agraph/etc/agraph.cfg
 EXPOSE 10035 
 VOLUME /app
